@@ -1,1 +1,15 @@
-/*# sourceMappingURL=App.css.map */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.beers__layout {
+  display: inline-flex;
+  border: 2px solid black;
+  width: 99.75%;
+  height: 75%;
+}
+
+.beers__NavBar {
+  display: flex;
+}/*# sourceMappingURL=App.css.map */

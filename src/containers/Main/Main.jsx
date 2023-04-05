@@ -1,8 +1,14 @@
 import React from 'react'
+import CardList from '../../components/CardList/CardList'
 
-const Main = () => {
+const Main = (props) => {
+  const {beers} = props;
   return (
-    <div>Main</div>
+    <div>
+      Main
+      <CardList beers={beers}/>
+    </div>
+    
   )
 }
 
