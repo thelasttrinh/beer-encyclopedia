@@ -3,6 +3,12 @@
   padding: 0;
 }
 
+.beers{
+  h1{
+    text-align: center;
+  }
+}
+
 .beers__layout{
   display: inline-flex;
   border: 2px solid black;
@@ -12,4 +18,16 @@
 
 .beers__NavBar{
   display: flex;
+}
+
+.beers__main__CardList{
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+
+.beers__main__CardList_Cards{
+  img{
+    width: 150px;
+    height: 200px;
+  }
 }

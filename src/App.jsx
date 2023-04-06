@@ -15,12 +15,10 @@ const App = () => {
     fetchData();
   }, []);
   return (
-    <div>
+    <div className='beers'>
       <h1>Beer Encyclopedia</h1>
       <div className='beers__layout'>
-        <div className='beers__NavBar'>
         <NavBar beers={data}/>
-        </div>
         <Main beers={data}/>
       </div>
 

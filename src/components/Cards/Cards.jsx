@@ -1,8 +1,11 @@
 import React from 'react'
 
-const Cards = () => {
+const Cards = (props) => {
+  const {beers} = props;
   return (
-    <div>Cards</div>
+    <div className='beers__main__CardList_Cards'>
+      <img src={beers.image_url} alt={beers.tagline}/>
+    </div>
   )
 }
 
