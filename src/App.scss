@@ -26,8 +26,18 @@
 }
 
 .beers__main__CardList_Cards{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid pink;
+  width: 260px;
   img{
-    width: 150px;
+    width: 100px;
     height: 200px;
+    object-fit:contain;
+  }
+
+  p{
+    word-wrap:normal;
   }
 }
