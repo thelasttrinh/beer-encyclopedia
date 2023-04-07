@@ -41,3 +41,11 @@
     word-wrap:normal;
   }
 }
+
+.beers__main__CardList_Cards--ToolTip{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid blue;
+  z-index: 2;
+}

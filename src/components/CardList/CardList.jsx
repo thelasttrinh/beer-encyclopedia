@@ -15,9 +15,6 @@ const CardList = (props) => {
     return description;
   };
 
-  const handleToolTip = () =>{
-    setShowInfo(!showInfo);
-  };
 
   return (
     
@@ -25,7 +22,7 @@ const CardList = (props) => {
     <div>
         {beers.map((beer) => 
         <div className='beers__main__CardList'>
-            <Cards beers={beer} handleTruncate={handleTruncate} handleToolTip={handleToolTip}/>
+          <Cards beers={beer} handleTruncate={handleTruncate}/>
         </div>)}
     </div>
   )
