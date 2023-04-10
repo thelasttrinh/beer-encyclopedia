@@ -3,10 +3,16 @@ import ToolTip from '../ToolTip/ToolTip';
 
 const Cards = (props) => {
   const {beers, handleTruncate} = props;
-  const [showMyComponent, setShowMyComponent] = useState(false);
+  const [showToolTip, setToolTip] = useState(false);
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleOpen = () => {
+    setIsOpen(!isOpen);
+  };
 
   const handleClick = () => {
-    setShowMyComponent(true);
+    setToolTip(!showToolTip);
   };
 
   return (
@@ -15,9 +21,17 @@ const Cards = (props) => {
       <a href="#" onClick={handleClick}>
         {beers.name}
         </a>
-      {showMyComponent && <ToolTip name={beers.name} />}
-      <p >{handleTruncate(beers.description)}</p>
+    <>
+    {isOpen && <div className='beers__main__CardList_Cards--ToolTip--Overlay' onClick={handleOpen}></div>}
+      {showToolTip && <ToolTip name={beers.name} 
+      tagline={beers.tagline} first={beers.first_brewed} 
+      abv={beers.abv} ph={beers.ph} pairing={beers.food_pairing} 
+      tips={beers.brewers_tips} desc={beers.description}
+      handleClick={handleClick} />}
+      </>
+      <p>{handleTruncate(beers.description)}</p>
     </div>
+    
   )
 }
 
