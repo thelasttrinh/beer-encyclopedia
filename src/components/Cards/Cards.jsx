@@ -7,11 +7,13 @@ const Cards = (props) => {
 
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleOpen = () => {
-    setIsOpen(!isOpen);
-  };
+  // const handleOpen = () => {
+  //   setIsOpen(!isOpen);
+  //   setToolTip(!showToolTip);
+  // };
 
   const handleClick = () => {
+    setIsOpen(!isOpen);
     setToolTip(!showToolTip);
   };
 
@@ -22,7 +24,7 @@ const Cards = (props) => {
         {beers.name}
         </a>
     <>
-    {isOpen && <div className='beers__main__CardList_Cards--ToolTip--Overlay' onClick={handleOpen}></div>}
+    {isOpen && <div className='beers__main__CardList_Cards--ToolTip--Overlay' onClick={handleClick}></div>}
       {showToolTip && <ToolTip name={beers.name} 
       tagline={beers.tagline} first={beers.first_brewed} 
       abv={beers.abv} ph={beers.ph} pairing={beers.food_pairing} 
