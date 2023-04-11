@@ -7,8 +7,8 @@ const CardList = (props) => {
   const {beers} = props;
 
   const handleTruncate = (description) => {
-    if(description.length > 50){
-      return `${description.substring(0,50)}...`;
+    if(description.length > 30){
+      return `${description.substring(0,30)}...`;
     }
     return description;
   };

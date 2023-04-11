@@ -16,9 +16,13 @@
   height: 75%;
 }
 
-.beers__NavBar{
-  display: flex;
-}
+// .beers__NavBar{
+//   // display: flex;
+// }
+
+// .beers__main{
+
+// }
 
 .beers__main__CardList{
   display: inline-flex;
@@ -31,6 +35,7 @@
   align-items: center;
   border: 2px solid pink;
   width: 260px;
+
   img{
     width: 100px;
     height: 200px;
@@ -41,6 +46,7 @@
     word-wrap:normal;
   }
 }
+
 
 .beers__main__CardList_Cards--ToolTip--Overlay {
   position: fixed;

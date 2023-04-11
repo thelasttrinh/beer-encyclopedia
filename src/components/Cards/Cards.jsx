@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ToolTip from '../ToolTip/ToolTip';
+import noImage from '../../assets/images/No_image_available.svg.png'
 
 const Cards = (props) => {
   const {beers, handleTruncate} = props;
@@ -18,10 +19,10 @@ const Cards = (props) => {
   };
 
   return (
-    <div className='beers__main__CardList_Cards'>
-      <img src={beers.image_url} alt={beers.tagline}/>
+    <div className={`beers__main__CardList_Cards`}>
+      <img src={beers.image_url || noImage} alt={beers.tagline}/>
       <a href="#" onClick={handleClick}>
-        {beers.name}
+      {handleTruncate(beers.name)}
         </a>
     <>
     {isOpen && <div className='beers__main__CardList_Cards--ToolTip--Overlay' onClick={handleClick}></div>}
