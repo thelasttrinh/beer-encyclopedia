@@ -35,18 +35,16 @@ const App = () => {
   const handleAbvHigh = () => {
     setAbvHighFilter(!abvHighFilter);
     setChecked(!checked);
-    console.log("It works");
   }
 
 
   const filteredBeerLower = filteredBeers.filter((beer) =>{
     const beerLower = beer.name.toLowerCase()
-    return beerLower.includes(searchTerm) ;
+    //Sets filter by checking if filter is not active = all beers will appear
+    //If filter is active = filter all beers by abv > 6.0
+    let abvHighPass = !abvHighFilter || (abvHighFilter && beer.abv > 6.0);
+    return beerLower.includes(searchTerm) && abvHighPass;
   });
-
-  const highAbvBeers = filteredBeerLower.filter((beer) => beer.abv >= 6);
-
-  const lowAbvBeers = filteredBeerLower.filter((beer) => beer.abv < 6);
 
   return (
     <div className='beers'>
@@ -61,20 +59,3 @@ const App = () => {
 }
 
 export default App
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const response = await fetch('https://api.punkapi.com/v2/beers');
-  //     const json = await response.json();
-  //     setData(json);
-  //   };
-  //   fetchData();
-  // }, []);
-
-    // const fetchData = async () => {
-  //   const response = await fetch('https://api.punkapi.com/v2/beers?page=5&per_page=50');
-  //   const json = await response.json();
-  //   setData(json);
-  // };
-  // fetchData();
-//Make changes to the api 
