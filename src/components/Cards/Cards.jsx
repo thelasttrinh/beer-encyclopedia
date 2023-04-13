@@ -26,7 +26,7 @@ const Cards = (props) => {
         </a>
     <>
     {isOpen && <div className='beers__main__CardList_Cards--ToolTip--Overlay' onClick={handleClick}></div>}
-      {showToolTip && <ToolTip name={beers.name} 
+      {showToolTip && <ToolTip key={beers.id} name={beers.name} 
       tagline={beers.tagline} first={beers.first_brewed} 
       abv={beers.abv} ph={beers.ph} pairing={beers.food_pairing} 
       tips={beers.brewers_tips} desc={beers.description}
