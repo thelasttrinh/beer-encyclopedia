@@ -4,29 +4,53 @@
 }
 
 .beers{
-  h1{
+  h1, span{
     text-align: center;
   }
 }
 
 .beers__layout{
-  display: inline-flex;
+  display: flex;
   border: 2px solid black;
   width: 99.75%;
-  height: 75%;
+  height: 99.75%;
+  min-height: 99.75%;
+  align-items: stretch;
 }
 
-// .beers__NavBar{
-//   // display: flex;
-// }
+.beers_gallery{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-grow: 1;
+}
 
-// .beers__main{
+.beers__NavBar{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border: 2px solid green;
+}
 
-// }
+.beers_Navbar--filters{
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  label{
+    text-align: center;
+    grid-column-start: 1;
+    place-items: center;
+  }
+  input{
+    grid-column-start: 2;
+  }
+}
 
 .beers__main__CardList{
   display: inline-flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  margin: 0.7rem;
 }
 
 .beers__main__CardList_Cards{
@@ -34,11 +58,13 @@
   flex-direction: column;
   align-items: center;
   border: 2px solid pink;
-  width: 260px;
+  border-radius: 1rem;
+  min-width: 16.25rem;
+  flex-shrink: 0;
 
   img{
-    width: 100px;
-    height: 200px;
+    width: 6.25rem;
+    height: 12.5rem;
     object-fit:contain;
   }
 
@@ -64,7 +90,7 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);

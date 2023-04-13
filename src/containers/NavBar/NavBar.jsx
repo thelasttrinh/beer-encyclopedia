@@ -4,7 +4,7 @@ import Filters from '../../components/Filters/Filters';
 import SearchBar from '../../components/SearchBar/SearchBar';
 
 const NavBar = (props) => {
-  const {beers, handleInput, handleAbvHigh, checkedAbv, handlePhHigh, checkedPh} = props;
+  const {beers, handleInput, handleAbvHigh, checkedAbv, handlePhHigh, checkedPh, handleClassic, checkedClassic} = props;
       
 
   return (
@@ -13,10 +13,9 @@ const NavBar = (props) => {
       handleInput={handleInput}
       />
       <Filters
-      handleAbvHigh={handleAbvHigh}
-      handlePhHigh={handlePhHigh}
-      checkedPh={checkedPh}
-      checkedAbv={checkedAbv}/>
+      handleAbvHigh={handleAbvHigh} handlePhHigh={handlePhHigh}
+      checkedPh={checkedPh} checkedAbv={checkedAbv}
+      handleClassic={handleClassic} checkedClassic={checkedClassic}/>
     </div>
   )
 }

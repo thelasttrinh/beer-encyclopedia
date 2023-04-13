@@ -1,18 +1,22 @@
 import React from 'react'
 
 const Filters = (props) => {
-    const {handleAbvHigh, checkedAbv, handlePhHigh, checkedPh} = props;
+  const { handleAbvHigh, checkedAbv, handlePhHigh, checkedPh, checkedClassic, handleClassic } = props;
 
   return (
-    <div>
+    <div className='beers_Navbar--filters'>
       <label>
         High ABV (+6.0%)
-        <input type="checkbox" checkedAbv={checkedAbv} onChange={handleAbvHigh}/>
       </label>
+      <input type="checkbox" checkedAbv={checkedAbv} onChange={handleAbvHigh} />
       <label>
-        High Ph (Less than 4)
-        <input type="checkbox" checkedPh={checkedPh} onChange={handlePhHigh}/>
+        High Ph (Less than 4) 
       </label>
+      <input type="checkbox" checkedPh={checkedPh} onChange={handlePhHigh} />
+      <label>
+        Classic (Brewed before 2010)
+      </label>
+      <input type="checkbox" onChange={handleClassic} checkedClassic={checkedClassic} />
     </div>
   )
 }

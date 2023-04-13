@@ -7,15 +7,18 @@ const Cards = (props) => {
   const [showToolTip, setToolTip] = useState(false);
 
   const [isOpen, setIsOpen] = useState(false);
+  // const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
 
   // const handleOpen = () => {
   //   setIsOpen(!isOpen);
   //   setToolTip(!showToolTip);
   // };
 
-  const handleClick = () => {
+  const handleClick = (event) => {
     setIsOpen(!isOpen);
     setToolTip(!showToolTip);
+    event.preventDefault();
+
   };
 
   return (
@@ -25,8 +28,8 @@ const Cards = (props) => {
       {handleTruncate(beers.name)}
         </a>
     <>
-    {isOpen && <div className='beers__main__CardList_Cards--ToolTip--Overlay' onClick={handleClick}></div>}
-      {showToolTip && <ToolTip key={beers.id} name={beers.name} 
+    {isOpen && <div className='beers__main__CardList_Cards--ToolTip--Overlay'></div>}
+      {showToolTip && <ToolTip name={beers.name} 
       tagline={beers.tagline} first={beers.first_brewed} 
       abv={beers.abv} ph={beers.ph} pairing={beers.food_pairing} 
       tips={beers.brewers_tips} desc={beers.description}
@@ -39,3 +42,9 @@ const Cards = (props) => {
 }
 
 export default Cards
+//style={{ top: tooltipPosition.y, left: tooltipPosition.x }}
+    // if (!showToolTip) {
+    //   // Calculate the position of the tooltip relative to the clicked element
+    //   const rect = event.target.getBoundingClientRect();
+    //   setTooltipPosition({ x: rect.x + rect.width / 2, y: rect.y + rect.height / 2 });
+    // }

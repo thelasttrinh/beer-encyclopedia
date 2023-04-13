@@ -6,6 +6,7 @@ import "../../App.scss";
 const CardList = (props) => {
   const {beers} = props;
 
+  //Downsize description to keep card sizes uniform
   const handleTruncate = (description) => {
     if(description.length > 30){
       return `${description.substring(0,30)}...`;
@@ -20,6 +21,7 @@ const CardList = (props) => {
     <div>
         {beers.map((beer) => {
           // If beer id already exists in the Set, skip rendering
+          // Avoids dupe cards
           if (uniqueBeerIds.has(beer.id)) {
             return null;
           }

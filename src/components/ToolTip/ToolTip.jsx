@@ -1,12 +1,12 @@
-import React, { useState }from 'react'
+import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
 
 const ToolTip = (props) => {
-  const {name, tagline, first, abv, ph, pairing, tips, desc, handleClick} = props;
+  const {name, tagline, first, abv, ph, pairing, tips, desc, handleClick, style} = props;
 
   return (
-    <div className='beers__main__CardList_Cards--ToolTip'>
+    <div className='beers__main__CardList_Cards--ToolTip' style={style}>
       <FontAwesomeIcon icon={faXmark} onClick={handleClick} className='beers__main__CardList_Cards--ToolTip--faXmark'/>
       Name: {name} <br/>
       Tagline: {tagline} <br/>
