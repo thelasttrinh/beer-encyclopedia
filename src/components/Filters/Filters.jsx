@@ -1,4 +1,5 @@
 import React from 'react'
+import "../../App.scss";
 
 const Filters = (props) => {
   const { handleAbvHigh, checkedAbv, handlePhHigh, checkedPh, checkedClassic, handleClassic } = props;

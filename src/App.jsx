@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react'
 import Main from "./containers/Main/Main";
 import NavBar from './containers/NavBar/NavBar';
 import "./App.scss";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
+import { faMinus } from '@fortawesome/free-solid-svg-icons'
 
 const App = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -111,9 +114,9 @@ const App = () => {
       </div>
 
       <div className='beers_gallery'>
-      <button onClick={incrementPage}>+</button>
-      <span>{page}</span>
-      <button onClick={decrementPage}>-</button>
+      <button onClick={decrementPage}  className='beers_gallery--minus'><FontAwesomeIcon icon={faMinus} className='beers_gallery--minus'/></button>
+      <span>Page: {page}</span>
+      <button onClick={incrementPage} className='beers_gallery--plus'><FontAwesomeIcon icon={faPlus} className='beers_gallery--plus'/></button>
       </div>
 
     </div>

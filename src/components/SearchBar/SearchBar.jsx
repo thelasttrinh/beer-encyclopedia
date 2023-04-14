@@ -1,4 +1,5 @@
 import React from 'react'
+import "../../App.scss";
 
 const SearchBar = (props) => {
     const {searchTerm, handleInput} = props;
@@ -7,7 +8,8 @@ const SearchBar = (props) => {
       <input type='text' 
       placeholder='Search name of beer...' 
       value={searchTerm}
-      onChange={handleInput}>
+      onChange={handleInput}
+      className='beer__NavBar--SearchBar'>
       </input>
     </div>
   )
