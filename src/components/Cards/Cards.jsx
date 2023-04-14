@@ -22,20 +22,23 @@ const Cards = (props) => {
   };
 
   return (
-    <div className={`beers__main__CardList_Cards`}>
+    <div className='beers__main__CardList_Cards--border'>
+      <div className={`beers__main__CardList_Cards`}>
       <img src={beers.image_url || noImage} alt={beers.tagline}/>
       <a href="#" onClick={handleClick}>
       {handleTruncate(beers.name)}
-        </a>
-    <>
-    {isOpen && <div className='beers__main__CardList_Cards--ToolTip--Overlay'></div>}
+      </a>
+      <p>{handleTruncate(beers.description)}</p>
+      </div>
+      
+      <div>
+      {isOpen && <div className='beers__main__CardList_Cards--ToolTip--Overlay'></div>}
       {showToolTip && <ToolTip name={beers.name} 
       tagline={beers.tagline} first={beers.first_brewed} 
       abv={beers.abv} ph={beers.ph} pairing={beers.food_pairing} 
       tips={beers.brewers_tips} desc={beers.description}
-      handleClick={handleClick} />}
-      </>
-      <p>{handleTruncate(beers.description)}</p>
+      handleClick={handleClick}/>}
+      </div>
     </div>
     
   )

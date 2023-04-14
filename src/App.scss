@@ -7,12 +7,19 @@ $tertiary-color: #0d0d0d;
   padding: 0;
   font-family: 'Varela Round', sans-serif;
   background-color: $secondary-color;
-  color: $tertiary-color;
+  // color: $tertiary-color;
+  
 }
 
 .beers{
-  h1, span{
+  background-image: linear-gradient(to left, $primary-color, $secondary-color);
+  border-radius: 10px;
+  span{
     text-align: center;
+  }
+  h1{
+    text-align: center;
+    background-image: linear-gradient(to left, $primary-color, $secondary-color);
   }
 }
 
@@ -20,7 +27,7 @@ $tertiary-color: #0d0d0d;
   display: flex;
   width: 99.75%;
   height: 99.75%;
-  min-height: 99.75%;
+  background-image: linear-gradient(to left, $primary-color, $secondary-color);
 }
 
 .beers_gallery{
@@ -30,6 +37,7 @@ $tertiary-color: #0d0d0d;
   flex-grow: 1;
   padding: 1rem;
   font-size: 1.5rem;
+  background-image: linear-gradient(to left, $primary-color, $secondary-color);
   button{
     width: 4rem;
     height: 4rem;
@@ -37,8 +45,29 @@ $tertiary-color: #0d0d0d;
     cursor: pointer;
     transition: color 0.3s;
     font-size: 1.5rem;
+    background-color: transparent;
+  }
+  span{
+    background-color: transparent;
   }
 }
+
+.beers_gallery--minus {
+  background-color: transparent;
+}
+
+.beers_gallery--plus{
+  background-color: transparent;
+}
+
+.beers_gallery--minus{
+  border: transparent;
+}
+
+.beers_gallery--plus{
+  border: transparent;
+}
+
 
 .beers_gallery--minus:hover{
   background-color: white;
@@ -54,6 +83,12 @@ $tertiary-color: #0d0d0d;
   justify-content: space-around;
   border: 4px solid $primary-color;
   border-radius: 10px;
+  box-shadow:
+  0 1px 1px hsl(0deg 0% 0% / 0.075),
+  0 2px 2px hsl(0deg 0% 0% / 0.075),
+  0 4px 4px hsl(0deg 0% 0% / 0.075),
+  0 8px 8px hsl(0deg 0% 0% / 0.075),
+  0 16px 16px hsl(0deg 0% 0% / 0.075);
 }
 
 .beers_Navbar--filters{
@@ -76,6 +111,23 @@ $tertiary-color: #0d0d0d;
   text-align: center;
   border-radius: 5px;
   height: 3rem;
+  font-size: 0.8rem;
+}
+
+.beers__main{
+  border: 4px solid $primary-color;
+  margin: 5px;
+  border-radius: 5px;
+  box-shadow:
+  0 1px 1px hsl(0deg 0% 0% / 0.075),
+  0 2px 2px hsl(0deg 0% 0% / 0.075),
+  0 4px 4px hsl(0deg 0% 0% / 0.075),
+  0 8px 8px hsl(0deg 0% 0% / 0.075),
+  0 16px 16px hsl(0deg 0% 0% / 0.075);
+}
+
+.beers__Main{
+  background-image: linear-gradient(to left, $primary-color, $secondary-color);
 }
 
 .beers__main__CardList{
@@ -90,17 +142,8 @@ $tertiary-color: #0d0d0d;
   align-items: center;
   border: 4px solid $primary-color;
   border-radius: 1rem;
-  width: 16.25rem;
-  overflow: hidden;
-  box-shadow:
-  0 1px 1px hsl(0deg 0% 0% / 0.075),
-  0 2px 2px hsl(0deg 0% 0% / 0.075),
-  0 4px 4px hsl(0deg 0% 0% / 0.075),
-  0 8px 8px hsl(0deg 0% 0% / 0.075),
-  0 16px 16px hsl(0deg 0% 0% / 0.075)
-;
-  transition: box-shadow 0.3s ease-in-out;
-
+  width: 16rem;
+  box-shadow: 0px 1px 2px #727375;
   img{
     width: 6.25rem;
     height: 12.5rem;
@@ -110,21 +153,22 @@ $tertiary-color: #0d0d0d;
   p{
     word-wrap:normal;
   }
+
 }
 
 .beers__main__CardList_Cards:hover{
   transform: scale(1.1, 1.1);
-    box-shadow: 5px 5px 3px #727375;
+  box-shadow: 5px 5px 3px #727375;
 }
 
 
-.beers__main__CardList_Cards--ToolTip--Overlay {
+.beers__main__CardList_Cards--ToolTip--Overlay{
   position: fixed;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  z-index: 2;
+  z-index: 3;
   background-color: transparent;
 }
 
@@ -140,13 +184,23 @@ $tertiary-color: #0d0d0d;
   transform: translate(-50%, -50%);
   padding: 1rem;
   background-color: #2d3436;
-  color: white;
-  z-index: 2;
+  color: $secondary-color;
+  z-index: 3;
+  border-radius: 10px;
+  box-shadow:
+  0 1px 1px hsl(0deg 0% 0% / 0.075),
+  0 2px 2px hsl(0deg 0% 0% / 0.075),
+  0 4px 4px hsl(0deg 0% 0% / 0.075),
+  0 8px 8px hsl(0deg 0% 0% / 0.075),
+  0 16px 16px hsl(0deg 0% 0% / 0.075);
 }
+
 
 .beers__main__CardList_Cards--ToolTip--faXmark{
   position: absolute;
   top:5%;
   right: 2%;
   font-size: 1.5rem;
+  background-color: transparent;
+  color: white;
 }

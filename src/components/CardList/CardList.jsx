@@ -18,7 +18,7 @@ const CardList = (props) => {
 
   return (
     // Use map for display cards
-    <div>
+    <div className='beers__Main'>
         {beers.map((beer) => {
           // If beer id already exists in the Set, skip rendering
           // Avoids dupe cards
