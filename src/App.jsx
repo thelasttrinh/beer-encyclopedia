@@ -22,7 +22,7 @@ const App = () => {
   const fetchData = async () => {
     let allBeers = [];
 
-    // Construct the API URL based on the state of your checkboxes
+    // Construct the API URL based on params & state of checkboxes
     if (abvHighFilter) {
       url += '&abv_gt=6';
     } else if (!abvHighFilter){
@@ -70,7 +70,7 @@ const App = () => {
     setCheckedClassic(!checkedClassic);
   }
 
-  //Beer gallery to see all beers
+  //Beer gallery to see all beers by increment/decrement pages
 
   const incrementPage = () => {
     if(page > filteredBeers.length){
@@ -91,6 +91,7 @@ const App = () => {
   //Search bar for beers
 
   const filteredBeerLower = filteredBeers.filter((beer) =>{
+    //If searching by term, api checks every 80 beers per page due to api limitations
     if(searchTerm){
       url = `https://api.punkapi.com/v2/beers?page=${page}&per_page=80`;
     }
@@ -102,9 +103,10 @@ const App = () => {
 
   return (
     <div className='beers'>
-      <h1>Beer Encyclopedia</h1>
+      <span className='beers__title'>
+        <h1> Punk Beer API Encyclopedia</h1>
+      </span>
       <div className='beers__layout'>
-
         <NavBar beers={filteredBeerLower} handleInput={handleInput}
          handleAbvHigh={handleAbvHigh} handlePhHigh={handlePhHigh} 
          checkedAbv={checkedAbv} checkedPh={checkedPh}
@@ -112,11 +114,12 @@ const App = () => {
         <Main beers={filteredBeerLower}
         incrementPage={incrementPage} decrementPage={decrementPage}/>
       </div>
-
       <div className='beers_gallery'>
-      <button onClick={decrementPage}  className='beers_gallery--minus'><FontAwesomeIcon icon={faMinus} className='beers_gallery--minus'/></button>
+      <button onClick={decrementPage}  className='beers_gallery--minus'>
+        <FontAwesomeIcon icon={faMinus} className='beers_gallery--minus'/></button>
       <span>Page: {page}</span>
-      <button onClick={incrementPage} className='beers_gallery--plus'><FontAwesomeIcon icon={faPlus} className='beers_gallery--plus'/></button>
+      <button onClick={incrementPage} className='beers_gallery--plus'>
+        <FontAwesomeIcon icon={faPlus} className='beers_gallery--plus'/></button>
       </div>
 
     </div>

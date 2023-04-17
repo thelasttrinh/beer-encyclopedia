@@ -7,7 +7,7 @@ const ToolTip = (props) => {
   const {name, tagline, first, abv, ph, pairing, tips, desc, handleClick} = props;
 
   return (
-    <div className='beers__main__CardList_Cards--ToolTip' >
+    <div className='beers__main__CardList_Cards--ToolTip ' >
       <FontAwesomeIcon icon={faXmark} onClick={handleClick} 
       className='beers__main__CardList_Cards--ToolTip--faXmark'/>
       Name: {name} <br/>
@@ -16,7 +16,7 @@ const ToolTip = (props) => {
       Description: {desc} <br/>
       ABV: {abv} <br/>
       PH: {ph} <br/>
-      Food Pairing: {pairing} <br/>
+      Food Pairing: {pairing.join(', ')} <br/>
       Brewer Tips: {tips} 
     </div>
   )
