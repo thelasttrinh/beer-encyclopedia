@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/beer-encyclopedia/static/css/main.5d7af30e.css",
+    "main.js": "/beer-encyclopedia/static/js/main.00a7749f.js",
+    "static/js/787.d292f842.chunk.js": "/beer-encyclopedia/static/js/787.d292f842.chunk.js",
+    "static/media/No_image_available.svg.png": "/beer-encyclopedia/static/media/No_image_available.svg.462e1efa68bf1fe67ef6.png",
+    "index.html": "/beer-encyclopedia/index.html",
+    "main.5d7af30e.css.map": "/beer-encyclopedia/static/css/main.5d7af30e.css.map",
+    "main.00a7749f.js.map": "/beer-encyclopedia/static/js/main.00a7749f.js.map",
+    "787.d292f842.chunk.js.map": "/beer-encyclopedia/static/js/787.d292f842.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5d7af30e.css",
+    "static/js/main.00a7749f.js"
+  ]
+}
